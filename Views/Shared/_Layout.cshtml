@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - NaughtyFamily</title>
+    @Styles.Render("~/Content/css", "~/CSS/myCss")
+    @Scripts.Render("~/bundles/jquery", "~/bundles/jqueryval", "~/bundles/modernizr", "~/bundles/bootstrap", "~/Js/myJs")
+</head>
+<body>
+
+    <!--webfont-->
+    <link href='http://fonts.useso.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Niconne' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+    </script>
+
+    <!-- header-section-starts -->
+    <div class="header-banner">
+        <div class="container">
+            <div class="home">
+                <a href="/Home/Index"><span class="glyphicon glyphicon-home"></span></a>
+            </div>
+            <div class="header-top">
+                <div class="social-icons">
+                    <i class="facebook"></i>
+                    <i class="twitter"></i>
+                    <i class="googlepluse"></i>
+                </div>
+                <span class="menu"><img src="images/nav.png" alt="" /></span>
+                <div class="top-menu">
+                    <ul>
+                        <nav class="cl-effect-13">
+                            <li><a href="/About/about">About</a></li>
+                            <li><a href="/Gallery/gallery">Gallery</a></li>
+                            <li><a class="scroll" href="#news">News</a></li>
+                            <li><a href="/Typography/typography">Typo</a></li>
+                            <li><a href="/Contact/contact">Contact</a></li>
+                        </nav>
+                    </ul>
+                </div>
+                <!-- script for menu -->
+                <script>
+
+						$( "span.menu" ).click(function() {
+						$( ".top-menu ul" ).slideToggle( 300, function() {
+						 // Animation complete.
+						});
+						});
+                </script>
+                <!-- //script for menu -->
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="banner-info text-center">
+                <h1><a href="index.html">Gardening</a></h1>
+            </div>
+
+            @RenderBody()
+
+</body>
+</html>
