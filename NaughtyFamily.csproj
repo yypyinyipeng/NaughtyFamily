@@ -221,6 +221,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\banner.jpg" />
+    <Content Include="Image\img-sprite.png" />
+    <Content Include="Image\Pets\g1.jpg" />
+    <Content Include="Image\Pets\g2.jpg" />
+    <Content Include="Image\Pets\g3.jpg" />
     <Content Include="Js\bootstrap.js" />
     <Content Include="Js\easing.js" />
     <Content Include="Js\jquery.chocolat.js" />

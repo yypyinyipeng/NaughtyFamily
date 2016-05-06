@@ -1,4 +1,5 @@
-﻿@{
+﻿@using NaughtyFamily.DBconn
+@{
      Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -58,98 +59,28 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
-			<div class="services-bottom-grids">
-				<div class="col-md-3 services-bottom-left">
-					<img src="images/s1.jpg" alt="" />
-				</div>
-				<div class="col-md-6 services-bottom-middle text-center">
-					<h3>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum  </h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-				</div>
-				<div class="col-md-3 services-bottom-right">
-					<img src="images/s2.jpg" alt="" />
-				</div>
-				<div class="clearfix"></div>
-			</div>
 		</div>
 	</div>
-	<div class="items">
-		<div class="container">
-			<div class="col-md-4 item-1">
-				<img src="images/i1.jpg" alt="" />
-				<h3>Duis autem vel eum</h3>
-			</div>
-			<div class="col-md-4 item-2">
-				<img src="images/i2.jpg" alt="" />
-				<h3>Duis autem vel eum</h3>
-			</div>
-			<div class="col-md-4 item-3 text-center">
-				<h4>Claritas est etiam processus dynamicus</h4>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-			<!-- testimonials -->
-	<div class="testimonials">
-		<div class="container">
-			<div class="testimonial-info">
-				<h3>Testimonials</h3>
-				<h5>Cras porttitor imperdiet volutpat nulla malesuada lectus eros <span>ut convallis felis consectetur ut </span></h5>
-			</div>
-			<div class="testimonial-grids">
-				<div class="testimonial-grid">
-					<p><span>"</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum iaculis diam quis sodales. Vestibulum eu dui tellus. In viverra porttitor auctor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas<span> "</span></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //testimonials -->
-    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >手机网站模板</a></div>
 	<!-- news -->
 	<div class="news" id="news">
 		<div class="container">
 			<div class="news-text">
-				<h3>News</h3>
-				<h5>Cras porttitor imperdiet volutpat nulla malesuada lectus eros <span>ut convallis felis consectetur ut </span></h5>
+				<h3>Pet News</h3>
+				<h5>New pet informations<span>Just love what you love</span></h5>
 			</div>
 			<div class="news-grids">
-				<div class="col-md-3 news-grid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
-					<a href="single.html">Integer vitae ligula sed lectus</a>
-					<span>8.00 - 10.00 | JUN 09,2014</span>
-					<a class="mask" href="single.html"><img src="images/img1.jpg" class="img-responsive zoom-img" alt="" /></a>
-					<div class="news-info">
-						<p>Pellentesque ut urna eu mauris scele risque auctor volutpat et massa pers piciis iste natus scele risque auctor volutpat et massa.</p>
-						<a class="button" href="single.html"><img src="images/read.png" alt=""></a>
-					</div>
-				</div>
-				<div class="col-md-3 news-grid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
-					<a href="single.html">Integer vitae ligula sed lectus</a>
-					<span>10.00 - 12.00 | SEP 24,2014</span>
-					<a class="mask" href="single.html"><img src="images/img2.jpg" class="img-responsive zoom-img" alt="" /></a>
-					<div class="news-info">
-						<p>Pellentesque ut urna eu mauris scele risque auctor volutpat et massa pers piciis iste natus scele risque auctor volutpat et massa.</p>
-						<a class="button" href="single.html"><img src="images/read.png" alt=""></a>
-					</div>
-				</div>
-				<div class="col-md-3 news-grid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
-					<a href="single.html">Integer vitae ligula sed lectus</a>
-					<span>9.00 - 10.00 | FEB 15,2014</span>
-					<a class="mask" href="single.html"><img src="images/img3.jpg" class="img-responsive zoom-img" alt="" /></a>
-					<div class="news-info">
-						<p>Pellentesque ut urna eu mauris scele risque auctor volutpat et massa pers piciis iste natus scele risque auctor volutpat et massa.</p>
-						<a class="button" href="single.html"><img src="images/read.png" alt=""></a>
-					</div>
-				</div>
-				<div class="col-md-3 news-grid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
-					<a href="single.html">Integer vitae ligula sed lectus</a>
-					<span>11.00 - 10.00 | JUN 10,2014</span>
-					<a class="mask" href="single.html"><img src="images/img4.jpg" class="img-responsive zoom-img" alt="" /></a>
-					<div class="news-info">
-						<p>Pellentesque ut urna eu mauris scele risque auctor volutpat et massa pers piciis iste natus scele risque auctor volutpat et massa.</p>
-						<a class="button" href="single.html"><img src="images/read.png" alt=""></a>
-					</div>
-				</div>
+                @foreach (PetInfo petInfoes in ViewBag.petInfoes)
+                {                 
+                    <div class="col-md-3 news-grid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+                        <a href="#">@petInfoes.pet_name</a>
+                        <span>@petInfoes.update_date</span>
+                        <a class="mask" href="#"><img src="/@petInfoes.pet_pic_url" class="img-responsive zoom-img" alt="" /></a>
+                        <div class="news-info">
+                            <p>@petInfoes.pet_message</p>
+                            <a class="button" href="#"><img src="" alt=""></a>
+                        </div>
+                    </div>
+                }
 				<div class="clearfix"> </div>
 			</div>
 		</div>

@@ -25,6 +25,10 @@ namespace NaughtyFamily.DBconn
 
         public int pet_age { get; set; }   //宠物年龄
 
+        public string pet_message { get; set; }   //宠物信息
+
+        public DateTime update_date { get; set; }
+
         public int owner_id { get; set; }   //宠物主人的Id   外键于userinfo
 
         [ForeignKey("owner_id")]
