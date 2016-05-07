@@ -31,7 +31,9 @@ namespace NaughtyFamily
             bundles.Add(new StyleBundle("~/CSS/myCss").Include(
                 "~/CSS/bootstrap.css",
                 "~/CSS/chocolat.css",
-                "~/CSS/style.css"));
+                "~/CSS/style.css",
+                "~/CSS/index.css"
+                ));
 
             bundles.Add(new ScriptBundle("~/Js/myJs").Include(
                 "~/Js/bootstrap.js",
