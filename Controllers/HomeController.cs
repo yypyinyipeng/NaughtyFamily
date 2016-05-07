@@ -10,23 +10,18 @@ namespace NaughtyFamily.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult Index(int page = 0)
         {
-            using (DbConn dbConn = new DbConn())
-            {
-                //UserInfo userInfo = new UserInfo();
-                //userInfo.user_name = "yipengy";
-                //userInfo.age = 22;
-                //userInfo.email = "18845296347@163.com";
-                //userInfo.gender = 0;
-                //userInfo.telephone_number = "18845296347";
-                //userInfo.create_time = DateTime.Now;
-                //dbConn.Database.Initialize(true);
-                //dbConn.UserInfo.Add(userInfo);
+                DbConn dbConn = new DbConn();
 
-                //dbConn.SaveChanges();
                 int index = page * 4;
-
                 List<PetInfo> petInfoes = new List<PetInfo>();
                 petInfoes =
                     (from p in dbConn.PetInfo
@@ -55,10 +50,7 @@ namespace NaughtyFamily.Controllers
                     ajaxModel.Statu = "error";
                     ajaxModel.Msg = "加载失败！";
                 }
-
-                //ViewBag.petInfoes = petInfoes;
                 return Json(ajaxModel);
-            }
         }
     }
 }
