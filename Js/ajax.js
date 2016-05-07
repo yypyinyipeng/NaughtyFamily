@@ -23,9 +23,9 @@ function lodaData() {
             if (data.Statu == "OK")
             {
                 var str = "";
-                for (var dataLength = 0; data.Data.length; dataLength++)
+                for (var i = 0; i < data.Data.length; i++)
                 {
-                    str += "";
+                    str += "<div class=’news-grids’><div class='col-md-3 news-grid wow bounceIn animated'data-wow-delay='0.4s'style='visibility: visible; -webkit-animation-delay: 0.4s;'><a href='#'>" + data.Data[i].pet_name + "</a><span>" + data.Data[i].update_date + "</span><a class='mask' href='#'><img src=/" + data.Data[i].pet_pic_url + " class='img-responsive zoom-img' alt='' /></a><div class='news-info'><p>" + data.Data[i].pet_message + "</p><a class='button' href='#'><img src='' alt=''></a></div></div><div class='clearfix'></div><div id='get-more'></div></div>";
                 }
                 $("#container").append(str);
                 $("#get-more").html(data.Msg);
