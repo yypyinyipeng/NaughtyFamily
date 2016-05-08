@@ -13,6 +13,7 @@ namespace NaughtyFamily.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.Title = "Index";
             return View();
         }
 
@@ -62,7 +63,7 @@ namespace NaughtyFamily.Controllers
             UserInfo userInfo = new UserInfo();
             userInfo =
                 (from u in dbConn.UserInfo
-                 where u.user_name == name
+                 where u.user_name.Equals(name)
                  select u
                 ).FirstOrDefault();
 
