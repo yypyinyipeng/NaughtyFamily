@@ -19,38 +19,38 @@ namespace NaughtyFamily.Controllers
         [HttpPost]
         public ActionResult Index(int page = 0)
         {
-                DbConn dbConn = new DbConn();
+            DbConn dbConn = new DbConn();
 
-                int index = page * 4;
-                List<PetInfo> petInfoes = new List<PetInfo>();
-                petInfoes =
-                    (from p in dbConn.PetInfo
-                     orderby p.PId descending
-                     select p).Skip(index).Take(4).ToList();
+            int index = page * 4;
+            List<PetInfo> petInfoes = new List<PetInfo>();
+            petInfoes =
+                (from p in dbConn.PetInfo
+                 orderby p.PId descending
+                 select p).Skip(index).Take(4).ToList();
 
-                AjaxModel ajaxModel = new AjaxModel();
-                try
-                {
-                    if (petInfoes.Count == 0)
-                    {
-                        ajaxModel.Data = "";
-                        ajaxModel.Statu = "end";
-                        ajaxModel.Msg = "没有更多内容了！";
-                    }
-                    else
-                    {
-                        ajaxModel.Data = petInfoes;
-                        ajaxModel.Statu = "OK";
-                        ajaxModel.Msg = "加载成功!";
-                    }
-                }
-                catch
+            AjaxModel ajaxModel = new AjaxModel();
+            try
+            {
+                if (petInfoes.Count == 0)
                 {
                     ajaxModel.Data = "";
-                    ajaxModel.Statu = "error";
-                    ajaxModel.Msg = "加载失败！";
+                    ajaxModel.Statu = "end";
+                    ajaxModel.Msg = "没有更多内容了！";
                 }
-                return Json(ajaxModel);
+                else
+                {
+                    ajaxModel.Data = petInfoes;
+                    ajaxModel.Statu = "OK";
+                    ajaxModel.Msg = "加载成功!";
+                }
+            }
+            catch
+            {
+                ajaxModel.Data = "";
+                ajaxModel.Statu = "error";
+                ajaxModel.Msg = "加载失败！";
+            }
+            return Json(ajaxModel);
         }
     }
 }
