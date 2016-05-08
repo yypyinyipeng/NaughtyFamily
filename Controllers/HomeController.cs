@@ -52,5 +52,40 @@ namespace NaughtyFamily.Controllers
             }
             return Json(ajaxModel);
         }
+
+        [HttpPost]
+        public ActionResult userRegister(string registerName)
+        {
+            DbConn dbConn = new DbConn();
+
+            string name = registerName;
+            UserInfo userInfo = new UserInfo();
+            userInfo =
+                (from u in dbConn.UserInfo
+                 where u.user_name == name
+                 select u
+                ).FirstOrDefault();
+
+            AjaxModel ajaxModel = new AjaxModel();
+            try
+            {
+                if (userInfo == null)
+                {
+                    ajaxModel.Statu = "OK";
+                    ajaxModel.Msg = "该用户名可以使用";
+                }
+                else
+                {
+                    ajaxModel.Statu = "NOK";
+                    ajaxModel.Msg = "该用户名已被使用";
+                }
+            }
+            catch
+            {
+                ajaxModel.Statu = "error";
+                ajaxModel.Msg = "验证失败";
+            }
+            return Json(ajaxModel);
+        }
     }
 }

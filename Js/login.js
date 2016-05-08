@@ -1,17 +1,21 @@
-﻿//$(document).ready(function () {
-//    $("#register").click(function () {
+﻿$(document).ready(function () {
 
-//    });
-//});
+    $("#get-register-name").blur(function () {
+        var registerName = $("#get-register-name").val();
+        $.ajax({
+            url: "/Home/userRegister",
+            type: "post",
+            data: { "registerName": registerName }
+        }).done(function (data) {
+            if (data.Statu == "OK")
+            {
+                alert("该用户名可以使用");
+            }
+            if (data.Statu = "NOK")
+            {
+                alert("该用户名已被使用");
+            }
+        });
+    });
 
-$(document).ready(function () {
-    $('#exampleModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var recipient = button.data('whatever') // Extract info from data-* attributes
-        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-        var modal = $(this)
-        modal.find('.modal-title').text('New message to ' + recipient)
-        modal.find('.modal-body input').val(recipient)
-    })
 });
