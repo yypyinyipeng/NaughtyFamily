@@ -18,9 +18,25 @@
             });
         }
         else {
-            $('#111').popover('show')
-            //alert("用户名不能为空！");
+            alert("用户名不能为空！");
             return false;
+        }
+    });
+
+    $("#get-register-pwd").blur(function () {
+        var registerPwd = $("#get-register-pwd").val();
+        if (registerPwd == "")
+        {
+            alert("密码不能为空!");
+        }
+    });
+
+    $("#get-register-repwd").blur(function () {
+        var registerRePwd = $("#get-register-repwd").val();
+        var registerPwd = $("#get-register-pwd").val();
+        if (registerRePwd != registerPwd)
+        {
+            alert("重复密码输入的不一致!");
         }
     });
 

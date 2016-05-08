@@ -63,7 +63,7 @@ namespace NaughtyFamily.Controllers
             UserInfo userInfo = new UserInfo();
             userInfo =
                 (from u in dbConn.UserInfo
-                 where u.user_name.Equals(name)
+                 where u.user_name == name
                  select u
                 ).FirstOrDefault();
 
