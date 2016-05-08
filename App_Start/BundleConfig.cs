@@ -20,19 +20,13 @@ namespace NaughtyFamily
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
-
-
             bundles.Add(new StyleBundle("~/CSS/myCss").Include(
-                "~/CSS/bootstrap.css",
                 "~/CSS/chocolat.css",
                 "~/CSS/style.css",
-                "~/CSS/index.css"
+                "~/CSS/index.css",
+                "~/CSS/bootstrap.css"
                 ));
 
             bundles.Add(new ScriptBundle("~/Js/myJs").Include(
@@ -41,7 +35,8 @@ namespace NaughtyFamily
                 "~/Js/jquery.chocolat.js",
                 "~/Js/jquery.min.js",
                 "~/Js/move-top.js",
-                "~/Js/ajax.js"
+                "~/Js/ajax.js",
+                "~/Js/login.js"
                 ));
         }
     }

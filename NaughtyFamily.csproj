@@ -211,8 +211,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\chocolat.css" />
     <Content Include="CSS\index.css" />
@@ -220,7 +218,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Image\banner.jpg" />
     <Content Include="Image\img-sprite.png" />
     <Content Include="Image\Pets\g1.jpg" />
@@ -231,9 +228,8 @@
     <Content Include="Js\easing.js" />
     <Content Include="Js\jquery.chocolat.js" />
     <Content Include="Js\jquery.min.js" />
+    <Content Include="Js\login.js" />
     <Content Include="Js\move-top.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -267,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\" />
     <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
