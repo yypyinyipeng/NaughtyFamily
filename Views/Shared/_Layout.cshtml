@@ -23,32 +23,67 @@
 			});
     </script>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <!--Sign-in-Modal-->
+    <div class="modal fade" id="Sign-in-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                    <h4 class="modal-title" id="exampleModalLabel">Sign in</h4>
                 </div>
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Recipient:</label>
+                            <label for="recipient-name" class="control-label">UserName:</label>
                             <input type="text" class="form-control" id="recipient-name">
                         </div>
                         <div class="form-group">
-                            <label for="message-text" class="control-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <label for="recipient-name" class="control-label">Password:</label>
+                            <input type="text" class="form-control" id="recipient-name">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
     </div>
+    <!--Sign-in-Modal  end-->
+
+    <!--Register-Modal-->
+    <div class="modal fade" id="Register-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Register</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">UserName:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Password:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Re-Password:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Register-Modal end-->
 
     <!-- header-section-starts -->
     <div class="header-banner">
@@ -58,8 +93,8 @@
             </div>
             <div class="header-top">
                 <div class="social-icons">
-                    <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#exampleModal" data-whatever="sign-in">Sign-in</button>
-                    <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#exampleModal" data-whatever="register">Register</button>
+                    <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#Sign-in-Modal" data-whatever="sign-in">Sign-in</button>
+                    <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#Register-Modal" data-whatever="register">Register</button>
                 </div>
                 <span class="menu"><img src="images/nav.png" alt="" /></span>
                 <div class="top-menu">
