@@ -18,13 +18,18 @@ namespace NaughtyFamily.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Index瀑布流加载内容
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Index(int page = 0)
         {
             DbConn dbConn = new DbConn();
 
-            int index = page * 4;
             List<PetInfo> petInfoes = new List<PetInfo>();
+            int index = page * 4;
             petInfoes =
                 (from p in dbConn.PetInfo
                  orderby p.PId descending
@@ -55,13 +60,18 @@ namespace NaughtyFamily.Controllers
             return Json(ajaxModel);
         }
 
+        /// <summary>
+        /// 检测用户名是否已被使用
+        /// </summary>
+        /// <param name="registerName"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult checkRegister(string registerName)
         {
             DbConn dbConn = new DbConn();
 
-            string name = registerName.Trim(); ;
             UserInfo userInfo = new UserInfo();
+            string name = registerName.Trim();
             userInfo =
                 (from u in dbConn.UserInfo
                  where u.user_name == name
@@ -90,14 +100,21 @@ namespace NaughtyFamily.Controllers
             return Json(ajaxModel);
         }
 
+        /// <summary>
+        /// 用户注册
+        /// </summary>
+        /// <param name="registerName"></param>
+        /// <param name="registerPwd"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult userRegister(string registerName, string registerPwd)
         {
             DbConn dbConn = new DbConn();
+
             UserInfo userInfo = new UserInfo();
-            AjaxModel ajaxModel = new AjaxModel();
             string name = registerName.Trim(); ;
             string pwd = Encryt.GetMD5(registerPwd.Trim());
+            AjaxModel ajaxModel = new AjaxModel();
             try
             {
                 userInfo.user_name = name;
@@ -124,12 +141,49 @@ namespace NaughtyFamily.Controllers
             return Json(ajaxModel);
         }
 
+        /// <summary>
+        /// 用户登录
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
-        public ActionResult userSignIn()
+        public ActionResult userSignIn(string signinName,string signinPwd)
         {
-
-
-            return View();
+            DbConn dbConn = new DbConn();
+            UserInfo userInfo = new UserInfo();
+            string name = signinName.Trim();
+            string pwd = Encryt.GetMD5(signinPwd.Trim());
+            AjaxModel ajaxModel = new AjaxModel();
+            try
+            {
+                userInfo =
+                    (from u in dbConn.UserInfo
+                     where u.user_name == name
+                     select u).FirstOrDefault();
+                if (userInfo == null)
+                {
+                    ajaxModel.Statu = "NOK";
+                    ajaxModel.Msg = "该用户还未注册";
+                }
+                else
+                {
+                    if (userInfo.pwd == pwd)
+                    {
+                        ajaxModel.Statu = "OK";
+                        ajaxModel.Msg = "登陆成功!";
+                    }
+                    else
+                    {
+                        ajaxModel.Statu = "NOK";
+                        ajaxModel.Msg = "密码错误，请重新输入";
+                    }
+                }
+            }
+            catch
+            {
+                ajaxModel.Statu = "error";
+                ajaxModel.Msg = "登陆失败!";
+            }
+            return Json(ajaxModel);
         }
     }
 }

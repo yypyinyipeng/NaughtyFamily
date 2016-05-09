@@ -10,11 +10,11 @@
                 data: { "registerName": registerName }
             }).done(function (data) {
                 if (data.Statu == "OK") {
-                    alert("该用户名可以使用");
+                    alert(data.Msg);
                     return true;
                 }
                 if (data.Statu = "NOK") {
-                    alert("该用户名已被使用");
+                    alert(data.Msg);
                 }
             });
         }
@@ -44,22 +44,55 @@
     $("#register-submit").click(function () {
         var registerName = $("#get-register-name").val();
         var registerPwd = $("#get-register-pwd").val();
+        var registerRePwd = $("#get-register-repwd").val();
+        if (registerName != "" && registerPwd != "" && registerRePwd != "") {
+            var registerName = registerName.toString();
+            var registerPwd = registerPwd.toString();
+            $.ajax({
+                url: "/Home/userRegister",
+                type: "post",
+                data: { "registerName": registerName, "registerPwd": registerPwd }
+            }).done(function (data) {
+                if (data.Statu == "OK") {
+                    alert(data.Msg);
+                    return true;
+                }
+                else {
+                    alert(data.Msg);
+                    return false;
+                }
+            });
+        }
+        else {
+            alert("请填写信息!");
+        }
+    });
+
+    $("#signin-submit").click(function () {
+        var signinName = $("#get-signin-name").val();
+        var signinPwd = $("#get-signin-pwd").val();
+
+        if (signinName == "") {
+            alert("用户名不能为空!");
+            return false;
+        }
+        if (signinPwd == "") {
+            alert("密码不能为空！");
+            return false;
+        }
         $.ajax({
-            url: "/Home/userRegister",
+            url: "/Home/userSignIn",
             type: "post",
-            data: { "registerName": registerName, "registerPwd": registerPwd }
+            data: { "signinName": signinName, "signinPwd": signinPwd }
         }).done(function (data) {
             if (data.Statu == "OK") {
-                alert("注册成功!");
+                alert(data.Msg);
                 return true;
             }
-            else {
-                alert("注册失败");
-                return false;
+            if (data.Statu == "NOK") {
+                alert(data.Msg);
             }
         });
     });
-
-
 
 });
