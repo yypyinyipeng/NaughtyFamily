@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using NaughtyFamily.Models.DateModels;
 using NaughtyFamily.Utility;
+using System.Web.Security;
 
 namespace NaughtyFamily.Controllers
 {
@@ -146,6 +147,7 @@ namespace NaughtyFamily.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult userSignIn(string signinName,string signinPwd)
         {
             DbConn dbConn = new DbConn();
@@ -170,6 +172,7 @@ namespace NaughtyFamily.Controllers
                     {
                         ajaxModel.Statu = "OK";
                         ajaxModel.Msg = "登陆成功!";
+                        FormsAuthentication.SetAuthCookie(name, false);
                     }
                     else
                     {
@@ -184,6 +187,16 @@ namespace NaughtyFamily.Controllers
                 ajaxModel.Msg = "登陆失败!";
             }
             return Json(ajaxModel);
+        }
+
+        /// <summary>
+        /// 登陆注销
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
