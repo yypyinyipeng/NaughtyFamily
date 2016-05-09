@@ -147,7 +147,7 @@ namespace NaughtyFamily.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult userSignIn(string signinName,string signinPwd)
         {
             DbConn dbConn = new DbConn();
@@ -172,7 +172,11 @@ namespace NaughtyFamily.Controllers
                     {
                         ajaxModel.Statu = "OK";
                         ajaxModel.Msg = "登陆成功!";
-                        FormsAuthentication.SetAuthCookie(name, false);
+                        //FormsAuthentication.SetAuthCookie(name, false);
+                        //if (ModelState.IsValid)  //配套@Html.ValidationSummary()
+                        //{
+
+                        //}
                     }
                     else
                     {

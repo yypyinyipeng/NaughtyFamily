@@ -1,5 +1,4 @@
 ﻿$(document).ready(function () {
-
     $("#get-register-name").blur(function () {
         var registerName = $("#get-register-name").val();
         if (registerName != "") {

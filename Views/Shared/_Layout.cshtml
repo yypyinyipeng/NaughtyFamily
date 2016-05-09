@@ -34,11 +34,13 @@
                 <div class="modal-body">
 
                     @*@using (Html.BeginForm("userSignIn", "Home",FormMethod.Post,new { }))
-                    {
-                        @Html.AntiForgeryToken();
+    {
+        @Html.AntiForgeryToken();
 
-                    }*@
+        @Html.ValidationSummary(); //配套ModelState.IsValid
 
+    }*@
+                    
                     <form>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">UserName:</label>
