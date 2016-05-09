@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NaughtyFamily.Models.DateModels;
+using NaughtyFamily.Utility;
 
 namespace NaughtyFamily.Controllers
 {
@@ -55,11 +56,11 @@ namespace NaughtyFamily.Controllers
         }
 
         [HttpPost]
-        public ActionResult userRegister(string registerName)
+        public ActionResult checkRegister(string registerName)
         {
             DbConn dbConn = new DbConn();
 
-            string name = registerName;
+            string name = registerName.Trim(); ;
             UserInfo userInfo = new UserInfo();
             userInfo =
                 (from u in dbConn.UserInfo
@@ -87,6 +88,48 @@ namespace NaughtyFamily.Controllers
                 ajaxModel.Msg = "验证失败";
             }
             return Json(ajaxModel);
+        }
+
+        [HttpPost]
+        public ActionResult userRegister(string registerName, string registerPwd)
+        {
+            DbConn dbConn = new DbConn();
+            UserInfo userInfo = new UserInfo();
+            AjaxModel ajaxModel = new AjaxModel();
+            string name = registerName.Trim(); ;
+            string pwd = Encryt.GetMD5(registerPwd.Trim());
+            try
+            {
+                userInfo.user_name = name;
+                userInfo.pwd = pwd;
+                userInfo.create_time = DateTime.Now;
+                dbConn.UserInfo.Add(userInfo);
+                int res = dbConn.SaveChanges();
+                if (res != 0)
+                {
+                    ajaxModel.Statu = "OK";
+                    ajaxModel.Msg = "注册成功!";
+                }
+                else
+                {
+                    ajaxModel.Statu = "NOK";
+                    ajaxModel.Msg = "注册失败!";
+                }
+            }
+            catch
+            {
+                ajaxModel.Statu = "error";
+                ajaxModel.Msg = "注册失败!";
+            }
+            return Json(ajaxModel);
+        }
+
+        [HttpPost]
+        public ActionResult userSignIn()
+        {
+
+
+            return View();
         }
     }
 }
