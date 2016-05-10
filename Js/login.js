@@ -86,6 +86,7 @@
         }).done(function (data) {
             if (data.Statu == "OK") {
                 alert(data.Msg);
+                location.reload();
                 return true;
             }
             if (data.Statu == "NOK") {

@@ -54,7 +54,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="signin-submit">Submit</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="signin-submit">Submit</button>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="register-submit">Submit</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="register-submit">Submit</button>
                 </div>
             </div>
         </div>
@@ -108,8 +108,10 @@
                 }
                 else
                 {
-                    @HttpContext.Current.User.Identity.Name;
-                    <a href="/Home/Logout">注销</a>
+                    <div class="social-icons" id="currentUserDisplay">
+                        @HttpContext.Current.User.Identity.Name
+                        <a href="/Home/Logout">注销</a>
+                    </div>
                 }
                 <span class="menu"><img src="images/nav.png" alt="" /></span>
                 <div class="top-menu">
