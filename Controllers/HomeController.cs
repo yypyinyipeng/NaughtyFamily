@@ -172,7 +172,8 @@ namespace NaughtyFamily.Controllers
                     {
                         ajaxModel.Statu = "OK";
                         ajaxModel.Msg = "登陆成功!";
-                        //FormsAuthentication.SetAuthCookie(name, false);
+                        FormsAuthentication.SetAuthCookie(name, false);
+                        ViewBag.currentUser = HttpContext.User.Identity.Name;
                         //if (ModelState.IsValid)  //配套@Html.ValidationSummary()
                         //{
 
