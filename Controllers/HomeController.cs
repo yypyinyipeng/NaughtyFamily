@@ -218,7 +218,6 @@ namespace NaughtyFamily.Controllers
                  where u.user_name == userName
                  select u).SingleOrDefault();
             ViewBag.userInfos = userInfo;
-
             return View();
         }
 

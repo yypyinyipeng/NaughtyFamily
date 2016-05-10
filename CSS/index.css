@@ -10,6 +10,23 @@
 .currentUserNameDisplay {
     font-weight: bold;
     font-family: 'Microsoft YaHei';
-    font-size:large;
-    color:white;
+    font-size: large;
+    color: white;
+}
+
+#bleaching-div {
+    height:100px;
+    width:100px;
+    margin-left:auto;
+    margin-right:auto;
+    border:250px solid rgba(255,255,255,0.5);
+    background-color: transparent;
+}
+
+#bleaching-div-chirld {
+    font-family:'Microsoft YaHei';
+    font-size:larger;
+    height: 300px;
+    width: 500px;
+    margin-left: 0px;
 }
