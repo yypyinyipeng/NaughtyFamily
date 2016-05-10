@@ -247,6 +247,7 @@
     <None Include="Views\Contact\contact.cshtml" />
     <None Include="Views\Gallery\gallery.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\userInfoDisplay.cshtml" />
     <None Include="Views\Single\single.cshtml" />
     <None Include="Views\Typography\typography.cshtml" />
     <Content Include="Web.config">

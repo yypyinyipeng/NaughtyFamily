@@ -1,8 +1,15 @@
 ﻿#get-more {
-    text-align:center;
-    font-weight:bold;
+    text-align: center;
+    font-weight: bold;
 }
 
 #news {
-    text-align:center;
+    text-align: center;
+}
+
+.currentUserNameDisplay {
+    font-weight: bold;
+    font-family: 'Microsoft YaHei';
+    font-size:large;
+    color:white;
 }

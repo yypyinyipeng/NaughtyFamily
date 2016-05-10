@@ -148,7 +148,7 @@ namespace NaughtyFamily.Controllers
         /// <returns></returns>
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult userSignIn(string signinName,string signinPwd)
+        public ActionResult userSignIn(string signinName, string signinPwd)
         {
             DbConn dbConn = new DbConn();
             UserInfo userInfo = new UserInfo();
@@ -198,10 +198,29 @@ namespace NaughtyFamily.Controllers
         /// 登陆注销
         /// </summary>
         /// <returns></returns>
-        public ActionResult Logout()
+        public ActionResult logout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
+
+        /// <summary>
+        /// 显示用户详细信息
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult userInfoDisplay(string userName)
+        {
+            DbConn dbConn = new DbConn();
+            UserInfo userInfo = new UserInfo();
+
+            userInfo =
+                (from u in dbConn.UserInfo
+                 where u.user_name == userName
+                 select u).SingleOrDefault();
+            ViewBag.userInfos = userInfo;
+
+            return View();
+        }
+
     }
 }
