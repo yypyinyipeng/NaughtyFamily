@@ -35,5 +35,7 @@ namespace NaughtyFamily.DBconn
 
         public DateTime create_time { get; set; }  //用户创建日期
 
+        public string photo_url { get; set; }   // 用户头像   路径
+
     }
 }
