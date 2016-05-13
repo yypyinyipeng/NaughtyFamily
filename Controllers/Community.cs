@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace NaughtyFamily.Controllers
 {
-    public class TypographyController : Controller
+    public class Community : Controller
     {
-        public ActionResult typography()
+        public ActionResult community()
         {
             return View();
         }

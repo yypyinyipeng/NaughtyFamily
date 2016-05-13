@@ -192,7 +192,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SingleController.cs" />
-    <Compile Include="Controllers\TypographyController.cs" />
+    <Compile Include="Controllers\Community.cs" />
     <Compile Include="DBconn\BBS.cs" />
     <Compile Include="DBconn\Book.cs" />
     <Compile Include="DBconn\DbConn.cs" />
@@ -251,7 +251,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Layout_less.cshtml" />
     <None Include="Views\Single\single.cshtml" />
-    <None Include="Views\Typography\typography.cshtml" />
+    <None Include="Views\Community\community.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
