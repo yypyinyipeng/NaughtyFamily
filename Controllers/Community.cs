@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace NaughtyFamily.Controllers
 {
-    public class Community : Controller
+    public class CommunityController : Controller
     {
         public ActionResult community()
         {

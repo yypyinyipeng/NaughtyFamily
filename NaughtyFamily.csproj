@@ -246,6 +246,7 @@
     <None Include="Views\About\about.cshtml" />
     <None Include="Views\Contact\contact.cshtml" />
     <None Include="Views\Gallery\gallery.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\userInfoDisplay.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

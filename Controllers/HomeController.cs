@@ -62,6 +62,24 @@ namespace NaughtyFamily.Controllers
         }
 
         /// <summary>
+        /// 宠物详细内容  Index
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Detail(int id)
+        {
+            DbConn dbConn = new DbConn();
+            PetInfo petInfo = new PetInfo();
+
+            petInfo =
+                (from p in dbConn.PetInfo
+                 where p.PId == id
+                 select p).SingleOrDefault();
+
+            ViewBag.petInfoes = petInfo;
+            return View();
+        }
+
+        /// <summary>
         /// 检测用户名是否已被使用
         /// </summary>
         /// <param name="registerName"></param>
@@ -210,14 +228,15 @@ namespace NaughtyFamily.Controllers
         /// <returns></returns>
         public ActionResult userInfoDisplay(string userName)
         {
-            DbConn dbConn = new DbConn();
-            UserInfo userInfo = new UserInfo();
-
-            userInfo =
-                (from u in dbConn.UserInfo
-                 where u.user_name == userName
-                 select u).SingleOrDefault();
-            ViewBag.userInfos = userInfo;
+            using (DbConn dbConn = new DbConn())
+            {
+                UserInfo userInfo = new UserInfo();
+                userInfo =
+                    (from u in dbConn.UserInfo
+                     where u.user_name == userName
+                     select u).SingleOrDefault();
+                ViewBag.userInfos = userInfo;
+            }
             return View();
         }
 
