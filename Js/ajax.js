@@ -1,7 +1,6 @@
 ﻿var lock = false;
 var page = 0;
 
-
 function loadData() {
     if (lock) {
         return;
@@ -50,4 +49,5 @@ $(document).ready(function () {
         if ($(document).height() <= totalHeight)
             loadData();
     });
+
 });

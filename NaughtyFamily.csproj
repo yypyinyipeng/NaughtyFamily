@@ -186,6 +186,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Area\AreaAreaRegistration.cs" />
+    <Compile Include="Areas\Area\Controllers\HomeController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -213,6 +214,9 @@
     <Compile Include="Utility\Encryt.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Area\CSS\admin_login.css" />
+    <Content Include="Areas\Area\CSS\common.css" />
+    <Content Include="Areas\Area\CSS\main.css" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\chocolat.css" />
     <Content Include="CSS\index.css" />
@@ -234,6 +238,11 @@
     <Content Include="Js\login.js" />
     <Content Include="Js\move-top.js" />
     <Content Include="Areas\Area\Views\web.config" />
+    <Content Include="Areas\Area\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Area\Views\Home\login.cshtml" />
+    <Content Include="Areas\Area\Views\Home\insert.cshtml" />
+    <Content Include="Areas\Area\Views\Home\design.cshtml" />
+    <Content Include="Areas\Area\Views\Home\system.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -271,7 +280,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Area\Controllers\" />
     <Folder Include="Areas\Area\Models\" />
     <Folder Include="Areas\Area\Views\Shared\" />
     <Folder Include="Models\ViewModels\" />
