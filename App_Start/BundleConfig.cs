@@ -36,7 +36,8 @@ namespace NaughtyFamily
                 "~/Js/jquery.min.js",
                 "~/Js/move-top.js",
                 "~/Js/ajax.js",
-                "~/Js/login.js"
+                "~/Js/login.js",
+                "~/Js/index.js"
                 ));
         }
     }

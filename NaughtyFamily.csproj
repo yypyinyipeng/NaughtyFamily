@@ -228,6 +228,7 @@
     <Content Include="Js\ajax.js" />
     <Content Include="Js\bootstrap.js" />
     <Content Include="Js\easing.js" />
+    <Content Include="Js\index.js" />
     <Content Include="Js\jquery.chocolat.js" />
     <Content Include="Js\jquery.min.js" />
     <Content Include="Js\login.js" />
