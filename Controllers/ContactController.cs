@@ -10,6 +10,7 @@ namespace NaughtyFamily.Controllers
     {
         public ActionResult contact()
         {
+            ViewBag.Title = "Contact";
             return View();
         }
     }

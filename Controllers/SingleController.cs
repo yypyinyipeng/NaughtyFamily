@@ -10,6 +10,7 @@ namespace NaughtyFamily.Controllers
     {
         public ActionResult single()
         {
+            ViewBag.Title = "Single";
             return View();
         }
     }

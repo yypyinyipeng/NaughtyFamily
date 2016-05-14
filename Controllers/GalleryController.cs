@@ -10,6 +10,7 @@ namespace NaughtyFamily.Controllers
     {
         public ActionResult gallery()
         {
+            ViewBag.Title = "Gallery";
             return View();
         }
     }

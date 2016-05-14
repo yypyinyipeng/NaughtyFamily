@@ -10,6 +10,7 @@ namespace NaughtyFamily.Controllers
     {
         public ActionResult community()
         {
+            ViewBag.Title = "Community";
             return View();
         }
     }

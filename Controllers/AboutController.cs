@@ -10,6 +10,7 @@ namespace NaughtyFamily.Controllers
     {
         public ActionResult about()
         {
+            ViewBag.Title = "About";
             return View();
         }
     }
