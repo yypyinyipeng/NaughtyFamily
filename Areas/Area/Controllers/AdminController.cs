@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NaughtyFamily.Areas.Area.Controllers
+namespace NaughtyFamily.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
         public ActionResult Index()
         {
