@@ -28,20 +28,22 @@ namespace NaughtyFamily.Models.ViewModels
 
         public vPetInfo(PetInfo model)
         {
-            DbConn dbConn = new DbConn();
-            this.PId = model.PId;
-            this.pet_name = model.pet_name;
-            this.pet_pic_url = model.pet_pic_url;
-            this.pet_age = model.pet_age;
-            this.pet_message = model.pet_message;
-            this.update_date = model.update_date;
-            this.owner_id = model.owner_id;
-            this.pet_type_str = (from pt in dbConn.PetType where pt.PTId == model.pet_type select pt.type).SingleOrDefault();
+            using (DbConn dbConn = new DbConn())
+            {
+                pet_type_str = (from pt in dbConn.PetType where pt.PTId == model.pet_type select pt.type).SingleOrDefault();
+            }
+            PId = model.PId;
+            pet_name = model.pet_name;
+            pet_pic_url = model.pet_pic_url;
+            pet_age = model.pet_age;
+            pet_message = model.pet_message;
+            update_date = model.update_date;
+            owner_id = model.owner_id;
             if (model.pet_gender == 0)
-                this.pet_gender = "雄性";
+                pet_gender = "雄性";
             else
-                this.pet_gender = "雌性";
-            
+                pet_gender = "雌性";
+
         }
     }
 }
