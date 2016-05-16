@@ -23,6 +23,8 @@ namespace NaughtyFamily.DBconn
 
         public enum PGenderType {雄,雌 }   //宠物性别  雄性  0    雌性  1
 
+        public PGenderType pet_gender { get; set; }
+
         public int pet_age { get; set; }   //宠物年龄
 
         public string pet_message { get; set; }   //宠物信息

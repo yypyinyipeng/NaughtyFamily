@@ -24,6 +24,8 @@ namespace NaughtyFamily.Models.ViewModels
 
         public string pet_type_str { get; set; }  //宠物类型  string类型
 
+        public string pet_gender { get; set; }  //宠物性别  string 类型
+
         public vPetInfo(PetInfo model)
         {
             DbConn dbConn = new DbConn();
@@ -35,6 +37,11 @@ namespace NaughtyFamily.Models.ViewModels
             this.update_date = model.update_date;
             this.owner_id = model.owner_id;
             this.pet_type_str = (from pt in dbConn.PetType where pt.PTId == model.pet_type select pt.type).SingleOrDefault();
+            if (model.pet_gender == 0)
+                this.pet_gender = "雄性";
+            else
+                this.pet_gender = "雌性";
+            
         }
     }
 }

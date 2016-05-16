@@ -73,13 +73,13 @@ namespace NaughtyFamily.Controllers
             
             petInfo =
                 (from p in dbConn.PetInfo
-                 join pt in dbConn.PetType on p.pet_type equals pt.PTId
                  where p.PId == id
                  select p).SingleOrDefault();
 
             vPetInfo vpetInfo = new vPetInfo(petInfo);
 
             ViewBag.petInfoes = vpetInfo;
+            ViewBag.Title = "PetDetail";
             return View();
         }
 
