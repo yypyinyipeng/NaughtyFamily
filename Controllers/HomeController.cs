@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using NaughtyFamily.Models.DateModels;
 using NaughtyFamily.Utility;
 using System.Web.Security;
+using NaughtyFamily.Models.ViewModels;
 
 namespace NaughtyFamily.Controllers
 {
@@ -69,13 +70,16 @@ namespace NaughtyFamily.Controllers
         {
             DbConn dbConn = new DbConn();
             PetInfo petInfo = new PetInfo();
-
+            
             petInfo =
                 (from p in dbConn.PetInfo
+                 join pt in dbConn.PetType on p.pet_type equals pt.PTId
                  where p.PId == id
                  select p).SingleOrDefault();
 
-            ViewBag.petInfoes = petInfo;
+            vPetInfo vpetInfo = new vPetInfo(petInfo);
+
+            ViewBag.petInfoes = vpetInfo;
             return View();
         }
 
