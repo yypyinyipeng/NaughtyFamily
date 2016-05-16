@@ -32,7 +32,7 @@ function loadData() {
             if (data.Statu == "OK") {
                 var str = "<div class=’news-grids’>";
                 for (var i = 0; i < data.Data.length; i++) {
-                    str += "<div class='col-md-3 news-grid wow bounceIn animated'data-wow-delay='0.4s'style='visibility: visible; -webkit-animation-delay: 0.4s;'><a href='/Home/Detail?id='" + data.Data[i].PId + "'>Pet Name:" + data.Data[i].pet_name + "</a><span>Update date:" + ChangeDateFormat(data.Data[i].update_date) + "</span><a class='mask' href=/Home/Detail?id=" + data.Data[i].PId + "><img src=/" + data.Data[i].pet_pic_url + " class='img-responsive zoom-img' alt='' /></a><div class='news-info'><p>" + data.Data[i].pet_message + "</p><a class='button' href='#'></a></div></div>";
+                    str += "<div class='col-md-3 news-grid wow bounceIn animated'data-wow-delay='0.4s'style='visibility: visible; -webkit-animation-delay: 0.4s;'><a href='/Home/Detail?id='" + data.Data[i].PId + "'>Pet Name:" + data.Data[i].pet_name + "</a><span>Update date:" + ChangeDateFormat(data.Data[i].update_date) + "</span><a class='mask' href=/Home/Detail?id=" + data.Data[i].PId + "><img src=/" + data.Data[i].pet_pic_url + " class='img-responsive zoom-img' alt='' /></a><div class='news-info'><p>" + data.Data[i].pet_sumamry + "</p><a class='button' href='#'></a></div></div>";
                 }
                 str = str + "<div class='clearfix'></div></div>";
                 $("#container").append(str);

@@ -16,7 +16,14 @@ namespace NaughtyFamily.Models.ViewModels
 
         public int pet_age { get; set; }   //宠物年龄
 
-        public string pet_message { get; set; }   //宠物信息
+        public string pet_message { get; set; } //宠物信息
+
+        public string pet_sumamry
+        {
+            get
+            {
+            }
+        }   //宠物信息  简略
 
         public DateTime update_date { get; set; }
 
