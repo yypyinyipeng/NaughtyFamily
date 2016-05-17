@@ -15,11 +15,11 @@
 }
 
 #bleaching-div {
-    height:100px;
-    width:100px;
-    margin-left:auto;
-    margin-right:auto;
-    border:250px solid rgba(255,255,255,0.5);
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 250px solid rgba(255,255,255,0.5);
     background-color: transparent;
 }
 
@@ -29,24 +29,47 @@
     height: 300px;
     width: 500px;
     margin-left: -200px;
-    margin-top:-200px;
+    margin-top: -200px;
 }
 
 #user-photo {
-    width:50px;
-    height:50px;
-    margin-left:250px;
+    width: 50px;
+    height: 50px;
+    margin-left: 250px;
 }
 
 .bleaching-p {
-    margin:0px;
+    margin: 0px;
 }
 
-#contact_desc_div{
-    text-align:center;
+#contact_desc_div {
+    text-align: center;
+    height: 200px;
 }
 
-#pet-photo{
-    width:150px;
-    height:150px;
+#pet-photo {
+    width: 150px;
+    height: 150px;
+}
+
+#contact_desc_1 {
+    padding: 4em 0;
+    background: #FFF;
+    height: 500px;
+}
+
+#contact_desc_2 {
+    padding: 4em 0;
+    background: #FFF;
+    text-align: center;
+}
+
+#contact_desc_3 {
+    margin-left: 35%;
+    float: left;
+}
+
+#contact_desc_4 {
+    float: left;
+    margin-left: 5%;
 }

@@ -22,6 +22,7 @@ namespace NaughtyFamily.Models.ViewModels
         {
             get
             {
+                return Utility.StringHelper.SubString(Utility.StringHelper.CleanHTML(pet_message), 50, ("......"));
             }
         }   //宠物信息  简略
 
