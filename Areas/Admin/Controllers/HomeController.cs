@@ -1,4 +1,5 @@
 ﻿using NaughtyFamily.DBconn;
+using NaughtyFamily.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,13 +30,19 @@ namespace NaughtyFamily.Areas.Admin.Controllers
         {
             using (DbConn dbConn = new DbConn())
             {
-                List<PetInfo> perInfos = new List<PetInfo>();
-                perInfos =
+                List<PetInfo> petInfos = new List<PetInfo>();
+                petInfos =
                     (from p in dbConn.PetInfo
                      orderby p.PId descending
                      select p).ToList();
 
-                ViewBag.perInfos = perInfos;
+                List<vPetInfo> vpetInfos = new List<vPetInfo>();
+                foreach (PetInfo petInfo in petInfos)
+                {
+                    vPetInfo vpetInfo = new vPetInfo(petInfo);
+                    vpetInfos.Add(vpetInfo);
+                }
+                ViewBag.petInfos = vpetInfos;
             }
             return View();
         }

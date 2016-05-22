@@ -30,6 +30,8 @@ namespace NaughtyFamily.Models.ViewModels
 
         public int owner_id { get; set; }   //宠物主人的Id   外键于userinfo
 
+        public string owner_name { get; set; }   //宠物主人的名字
+
         public string pet_type_str { get; set; }  //宠物类型  string类型
 
         public string pet_gender { get; set; }  //宠物性别  string 类型
@@ -39,7 +41,7 @@ namespace NaughtyFamily.Models.ViewModels
             using (DbConn dbConn = new DbConn())
             {
                 pet_type_str = (from pt in dbConn.PetType where pt.PTId == model.pet_type select pt.type).SingleOrDefault();
-
+                owner_name = (from ui in dbConn.UserInfo where ui.UId == model.owner_id select ui.user_name).SingleOrDefault();
             }
             PId = model.PId;
             pet_name = model.pet_name;

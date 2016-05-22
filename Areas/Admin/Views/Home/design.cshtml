@@ -111,22 +111,22 @@
                                 <th>评论</th>
                                 <th>操作</th>
                             </tr>
-                            @foreach (PetInfo petinfo in ViewBag.perInfos as List<PetInfo>)
+                            @foreach (PetInfo petInfo in ViewBag.petInfos as List<PetInfo>)
                             {
                                 <tr>
-                                    <td class="tc"><input name="id[]" value="@petinfo.PId" type="checkbox"></td>
+                                    <td class="tc"><input name="id[]" value="@petInfo.PId" type="checkbox"></td>
                                     <td>
-                                        <input name="ids[]" value="@petinfo.PId" type="hidden">
+                                        <input name="ids[]" value="@petInfo.PId" type="hidden">
                                         <input class="common-input sort-input" name="ord[]" value="0" type="text">
                                     </td>
-                                    <td>@petinfo.PId</td>
-                                    <td title="@petinfo.pet_name">
-                                        <a target="_blank" href="#" title="@petinfo.pet_name">@petinfo.pet_name</a> …
+                                    <td>@petInfo.PId</td>
+                                    <td title="@petInfo.pet_name">
+                                        <a target="_blank" href="#" title="@petInfo.pet_name">@petInfo.pet_name</a> …
                                     </td>
                                     <td>0</td>
                                     <td>2</td>
-                                    <td>@petinfo.owner_id</td>
-                                    <td>@petinfo.update_date</td>
+                                    <td>@petInfo.</td>
+                                    <td>@petInfo.update_date</td>
                                     <td></td>
                                     <td>
                                         <a class="link-update" href="#">修改</a>
