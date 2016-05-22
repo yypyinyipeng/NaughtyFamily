@@ -65,7 +65,7 @@ namespace NaughtyFamily.Areas.Admin.Controllers
                 dbConn.PetInfo.Remove(petInfo);
                 dbConn.SaveChanges();
             }
-            return View();
+            return Redirect("/Admin/Home/design");
         }
 
         [HttpGet]
