@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NaughtyFamily.DBconn;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,6 +27,16 @@ namespace NaughtyFamily.Areas.Admin.Controllers
 
         public ActionResult design()
         {
+            using (DbConn dbConn = new DbConn())
+            {
+                List<PetInfo> perInfos = new List<PetInfo>();
+                perInfos =
+                    (from p in dbConn.PetInfo
+                     orderby p.PId descending
+                     select p).ToList();
+
+                ViewBag.perInfos = perInfos;
+            }
             return View();
         }
 

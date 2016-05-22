@@ -30,16 +30,16 @@ namespace NaughtyFamily.Controllers
         {
             DbConn dbConn = new DbConn();
 
-            List<PetInfo> petInfoes = new List<PetInfo>();
+            List<PetInfo> petInfos = new List<PetInfo>();
             int index = page * 4;
-            petInfoes =
+            petInfos =
                 (from p in dbConn.PetInfo
                  orderby p.PId descending
                  select p).Skip(index).Take(4).ToList();
 
             List<vPetInfo> vpetInfoes = new List<vPetInfo>();
 
-            foreach (PetInfo petInfo in petInfoes)
+            foreach (PetInfo petInfo in petInfos)
             {
                 vPetInfo vpetInfo = new vPetInfo(petInfo);
                 vpetInfoes.Add(vpetInfo);
@@ -86,7 +86,7 @@ namespace NaughtyFamily.Controllers
 
             vPetInfo vpetInfo = new vPetInfo(petInfo);
 
-            ViewBag.petInfoes = vpetInfo;
+            ViewBag.petInfos = vpetInfo;
             ViewBag.Title = "PetDetail";
             return View();
         }
