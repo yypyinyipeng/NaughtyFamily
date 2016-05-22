@@ -37,10 +37,18 @@ namespace NaughtyFamily.Controllers
                  orderby p.PId descending
                  select p).Skip(index).Take(4).ToList();
 
+            List<vPetInfo> vpetInfoes = new List<vPetInfo>();
+
+            foreach (PetInfo petInfo in petInfoes)
+            {
+                vPetInfo vpetInfo = new vPetInfo(petInfo);
+                vpetInfoes.Add(vpetInfo);
+            }
+
             AjaxModel ajaxModel = new AjaxModel();
             try
             {
-                if (petInfoes.Count == 0)
+                if (vpetInfoes.Count == 0)
                 {
                     ajaxModel.Data = "";
                     ajaxModel.Statu = "end";
@@ -48,7 +56,7 @@ namespace NaughtyFamily.Controllers
                 }
                 else
                 {
-                    ajaxModel.Data = petInfoes;
+                    ajaxModel.Data = vpetInfoes;
                     ajaxModel.Statu = "OK";
                     ajaxModel.Msg = "加载成功!";
                 }
@@ -70,7 +78,7 @@ namespace NaughtyFamily.Controllers
         {
             DbConn dbConn = new DbConn();
             PetInfo petInfo = new PetInfo();
-            
+
             petInfo =
                 (from p in dbConn.PetInfo
                  where p.PId == id
