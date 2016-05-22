@@ -10,22 +10,26 @@ namespace NaughtyFamily.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
             ViewBag.currentTime = DateTime.Now;
             return View();
         }
 
+        [HttpGet]
         public ActionResult login()
         {
             return View();
         }
 
+        [HttpGet]
         public ActionResult insert()
         {
             return View();
         }
 
+        [HttpGet]
         public ActionResult design()
         {
             using (DbConn dbConn = new DbConn())
@@ -47,6 +51,24 @@ namespace NaughtyFamily.Areas.Admin.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult designDelete(int id)
+        {
+            int Id = id;
+            using (DbConn dbConn = new DbConn())
+            {
+                PetInfo petInfo = new PetInfo();
+                petInfo =
+                    (from p in dbConn.PetInfo
+                     where p.PId == Id
+                     select p).SingleOrDefault();
+                dbConn.PetInfo.Remove(petInfo);
+                dbConn.SaveChanges();
+            }
+            return View();
+        }
+
+        [HttpGet]
         public ActionResult system()
         {
             return View();
