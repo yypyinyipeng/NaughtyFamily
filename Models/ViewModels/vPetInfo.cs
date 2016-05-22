@@ -39,6 +39,7 @@ namespace NaughtyFamily.Models.ViewModels
             using (DbConn dbConn = new DbConn())
             {
                 pet_type_str = (from pt in dbConn.PetType where pt.PTId == model.pet_type select pt.type).SingleOrDefault();
+
             }
             PId = model.PId;
             pet_name = model.pet_name;
