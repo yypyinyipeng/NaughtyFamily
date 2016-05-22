@@ -1,21 +1,13 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout_less.cshtml";
 }
-<div class="contact_desc_1">
-    <div class="contact_desc_2">
-        <div id="contact_desc_div">
-            <div class="contact_desc_3">
-                <img src="/@ViewBag.petInfoes.pet_pic_url" id="pet-photo" />
-            </div>
-            <div>
-                <div class="contact_desc_4">
-                    <p class="bleaching-p">PetName: @ViewBag.petInfoes.pet_name</p><br>
-                    <p class="bleaching-p">PetType:@ViewBag.petInfoes.pet_type_str</p><br>
-                    <p class="bleaching-p">PetGender:@ViewBag.petInfoes.pet_gender</p><br>
-                    <p class="bleaching-p">PetAge:@ViewBag.petInfoes.pet_age</p><br>
-                </div>
-            </div>
-        </div>
-        <p class="bleaching-p">@ViewBag.petInfoes.pet_message</p><br>
+
+<div id="bleaching-div-pet">
+    <div id="bleaching-div-chirld-pet">
+        <img src="/@ViewBag.petInfoes.pet_pic_url" id="pet-photo" /><br><br>
+        <p class="bleaching-p"><span>PetName: @ViewBag.petInfoes.pet_name</span></p><br>
+        <p class="bleaching-p">PetGender:@ViewBag.petInfoes.pet_gender</p><br>
+        <p class="bleaching-p">PetAge:@ViewBag.petInfoes.pet_age</p><br>
+        <p class="bleaching-p">@ViewBag.petInfoes.pet_message</p>
     </div>
 </div>

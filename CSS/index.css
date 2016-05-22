@@ -48,28 +48,24 @@
 }
 
 #pet-photo {
-    width: 150px;
-    height: 150px;
+    width: 400px;
+    height: 300px;
 }
 
-#contact_desc_1 {
-    padding: 4em 0;
-    background: #FFF;
-    height: 500px;
+#bleaching-div-pet {
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 400px solid rgba(255,255,255,0.5);
+    background-color: transparent;
 }
 
-#contact_desc_2 {
-    padding: 4em 0;
-    background: #FFF;
-    text-align: center;
-}
-
-#contact_desc_3 {
-    margin-left: 35%;
-    float: left;
-}
-
-#contact_desc_4 {
-    float: left;
-    margin-left: 5%;
+#bleaching-div-chirld-pet {
+    font-family: 'Microsoft YaHei';
+    font-size: larger;
+    height: 300px;
+    width: 500px;
+    margin-left: -200px;
+    margin-top: -200px;
 }
