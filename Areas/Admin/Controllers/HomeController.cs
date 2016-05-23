@@ -34,14 +34,17 @@ namespace NaughtyFamily.Areas.Admin.Controllers
 
             string name = username;
             string password = Encryt.GetMD5(pwd.Trim());
-            dbConn.UserInfo.Where(u => (u.user_name == name && u.pwd == password ));
+            dbConn.UserInfo.Where(u => (u.user_name == name && u.pwd == password ));  //加权限验证
             if (dbConn.UserInfo.Count() != 0)
             {
                 FormsAuthentication.SetAuthCookie(name, false);
                 ViewBag.currentAdminUser = HttpContext.User.Identity.Name;
                 return Redirect("/Admin/Home/Index");
             }
-            return View();
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -90,6 +93,13 @@ namespace NaughtyFamily.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult system()
         {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
             return View();
         }
     }

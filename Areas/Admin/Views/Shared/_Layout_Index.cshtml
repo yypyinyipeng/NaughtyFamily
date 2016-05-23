@@ -25,9 +25,9 @@
                     }
                     else
                     {
-                        <li><a href="#">管理员</a></li>
+                        <li><a href="#">@HttpContext.Current.User.Identity.Name</a></li>
                         <li><a href="#">修改密码</a></li>
-                        <li><a href="#">退出</a></li>
+                        <li><a href="/Admin/Home/Logout">退出</a></li>
                     }
                 </ul>
             </div>
