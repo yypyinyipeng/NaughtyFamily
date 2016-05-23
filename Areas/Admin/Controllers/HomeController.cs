@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace NaughtyFamily.Areas.Admin.Controllers
 {
@@ -36,6 +37,8 @@ namespace NaughtyFamily.Areas.Admin.Controllers
             dbConn.UserInfo.Where(u => (u.user_name == name && u.pwd == password ));
             if (dbConn.UserInfo.Count() != 0)
             {
+                FormsAuthentication.SetAuthCookie(name, false);
+                ViewBag.currentAdminUser = HttpContext.User.Identity.Name;
                 return Redirect("/Admin/Home/Index");
             }
             return View();

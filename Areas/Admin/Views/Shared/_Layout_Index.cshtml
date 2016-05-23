@@ -19,9 +19,16 @@
             </div>
             <div class="top-info-wrap">
                 <ul class="top-info-list clearfix">
-                    <li><a href="#">管理员</a></li>
-                    <li><a href="#">修改密码</a></li>
-                    <li><a href="#">退出</a></li>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <li><a href="/Admin/Home/login">管理员登录</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="#">管理员</a></li>
+                        <li><a href="#">修改密码</a></li>
+                        <li><a href="#">退出</a></li>
+                    }
                 </ul>
             </div>
         </div>
