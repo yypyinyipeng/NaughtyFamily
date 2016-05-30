@@ -34,7 +34,7 @@ namespace NaughtyFamily.Areas.Admin.Controllers
 
             string name = username;
             string password = Encryt.GetMD5(pwd.Trim());
-            dbConn.UserInfo.Where(u => (u.user_name == name && u.pwd == password ));  //加权限验证
+            dbConn.UserInfo.Where(u => (u.user_name == name && u.pwd == password));  //加权限验证
             if (dbConn.UserInfo.Count() != 0)
             {
                 FormsAuthentication.SetAuthCookie(name, false);
@@ -59,10 +59,12 @@ namespace NaughtyFamily.Areas.Admin.Controllers
             DbConn dbConn = new DbConn();
 
             List<PetInfo> petInfos = new List<PetInfo>();
-            petInfos =
-                (from p in dbConn.PetInfo
-                 orderby p.PId descending
-                 select p).ToList();
+            //dbConn.PetInfo.Select(p => p).ToList();
+            petInfos.Select(p => p).ToList();
+            //petInfos =
+            //    (from p in dbConn.PetInfo
+            //     orderby p.PId descending
+            //     select p).ToList();
 
             List<vPetInfo> vpetInfos = new List<vPetInfo>();
             foreach (PetInfo petInfo in petInfos)

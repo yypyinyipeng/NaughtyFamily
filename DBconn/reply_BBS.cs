@@ -19,7 +19,7 @@ namespace NaughtyFamily.DBconn
         public int writer_id { get; set; }  //回复作者Id  外键于UserInfo
 
         [ForeignKey("writer_id")]
-        public virtual UserInfo user_info { get; set; }
+        public virtual UserInfo UserInfo { get; set; }
 
         public int bbs_id { get; set; }    //父级帖子  Id  外键于  BBS
 
