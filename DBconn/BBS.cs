@@ -18,7 +18,7 @@ namespace NaughtyFamily.DBconn
 
         public DateTime release_time { get; set; }  //发布时间
 
-        public enum PostType {普通, 置顶, 废弃}  //用户类型 普通  0    置顶  1   废弃  2
+        public enum PostType {普通, 置顶, 废弃}  //帖子类型 普通  0    置顶  1   废弃  2
 
         public PostType post_type { get; set; } 
 
