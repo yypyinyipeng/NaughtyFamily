@@ -65,6 +65,7 @@ namespace NaughtyFamily.Areas.Admin.Controllers
                  orderby p.PId descending
                  select p).ToList();
 
+            int infoCount = petInfos.Count();
             List<vPetInfo> vpetInfos = new List<vPetInfo>();
             foreach (PetInfo petInfo in petInfos)
             {
@@ -72,6 +73,7 @@ namespace NaughtyFamily.Areas.Admin.Controllers
                 vpetInfos.Add(vpetInfo);
             }
             ViewBag.petInfos = vpetInfos;
+            ViewBag.infoCount = infoCount;
             return View();
         }
 
