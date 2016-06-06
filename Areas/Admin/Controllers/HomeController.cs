@@ -59,12 +59,11 @@ namespace NaughtyFamily.Areas.Admin.Controllers
             DbConn dbConn = new DbConn();
 
             List<PetInfo> petInfos = new List<PetInfo>();
-            //dbConn.PetInfo.Select(p => p).ToList();
-            petInfos.Select(p => p).ToList();
-            //petInfos =
-            //    (from p in dbConn.PetInfo
-            //     orderby p.PId descending
-            //     select p).ToList();
+            dbConn.PetInfo.Select(p => p).ToList();
+            petInfos =
+                (from p in dbConn.PetInfo
+                 orderby p.PId descending
+                 select p).ToList();
 
             List<vPetInfo> vpetInfos = new List<vPetInfo>();
             foreach (PetInfo petInfo in petInfos)
