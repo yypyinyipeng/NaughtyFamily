@@ -48,9 +48,28 @@ namespace NaughtyFamily.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public ActionResult insert()
+        public ActionResult insert(int typeId, string name, int age, string smalling, string content)
         {
-            return View();
+            DbConn dbConn = new DbConn();
+
+            PetInfo petInfo = new PetInfo();
+            UserInfo userInfo = new UserInfo();
+
+            string userName = HttpContext.User.Identity.Name;
+            dbConn.UserInfo.Where(u => (u.user_name == userName));
+
+            int ownerId = userInfo.UId;
+
+            petInfo.pet_type = typeId;
+            petInfo.pet_name = name;
+            petInfo.pet_age = age;
+            petInfo.pet_pic_url = "";
+            petInfo.pet_message = content;
+            petInfo.owner_id = ownerId;
+            dbConn.PetInfo.Add(petInfo);
+            dbConn.SaveChanges();
+
+            return Redirect("/Admin/Home/design");
         }
 
         [HttpGet]
@@ -103,7 +122,7 @@ namespace NaughtyFamily.Areas.Admin.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return View();
+            return Redirect("/Admin/Home/Index");
         }
     }
 }
