@@ -306,10 +306,13 @@
     <Content Include="Global.asax" />
     <Content Include="Image\banner.jpg" />
     <Content Include="Image\img-sprite.png" />
-    <Content Include="Image\Pets\g1.jpg" />
-    <Content Include="Image\Pets\g2.jpg" />
-    <Content Include="Image\Pets\g3.jpg" />
-    <Content Include="Image\Pets\g4.jpg" />
+    <Content Include="Image\Pets\1.jpg" />
+    <Content Include="Image\Pets\2.jpg" />
+    <Content Include="Image\Pets\3.jpg" />
+    <Content Include="Image\Pets\4.jpg" />
+    <Content Include="Image\Pets\5.jpg" />
+    <Content Include="Image\Pets\6.jpg" />
+    <Content Include="Image\Pets\7.jpg" />
     <Content Include="Image\team1.jpg" />
     <Content Include="Image\team2.jpg" />
     <Content Include="Js\ajax.js" />

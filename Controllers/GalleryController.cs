@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NaughtyFamily.DBconn;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,15 @@ namespace NaughtyFamily.Controllers
     {
         public ActionResult gallery()
         {
+            DbConn dbConn = new DbConn();
+
+            List<BBS> bbs = new List<BBS>();
+            bbs =
+                (from b in dbConn.BBS
+                 orderby b.BId descending
+                 select b).ToList();
+
+            ViewBag.bbs = bbs;
             ViewBag.Title = "Gallery";
             return View();
         }
