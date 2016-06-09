@@ -24,51 +24,13 @@
 	<div class="gallery-head" id="portfolio">
 	<h3>gallery</h3>
 		 <div class="gallery-bottom">
-					<div class="col-md-4 gallery-left">
-						<a href="images/gl7.jpg">
-							<img src="images/gl7.jpg" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 gallery-left">
-						<a href="images/gl4.jpg">
-							<img src="images/gl4.jpg" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 gallery-left">
-						<a href="images/gl5.jpg">
-							<img src="images/gl5.jpg" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 gallery-left">
-						<a href="images/gl6.jpg">
-							<img src="images/gl6.jpg" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 gallery-left">
-						<a href="images/r4.jpg">
-							<img src="images/r4.jpg" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 gallery-left">
-						<a href="images/gl2.jpg">
-							<img src="images/gl2.jpg" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 gallery-left">
-						<a href="images/r6.jpg">
-							<img src="images/r6.jpg" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 gallery-left">
-						<a href="images/r3.jpg">
-							<img src="images/r3.jpg" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 gallery-left">
-						<a href="images/gl4.jpg">
-							<img src="images/gl4.jpg" alt="name" />
-						</a>
-					</div>
+             @foreach (var bbs in ViewBag.bbs)
+             {
+                <div class="col-md-4 gallery-left">
+                    <p>@bbs.title</p>
+                    <p>@bbs.release_time</p>
+                </div>
+             }
 					<div class="clearfix"></div>
 			</div>
 
